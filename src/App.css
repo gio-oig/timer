@@ -1,38 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--backround-color: #cbecfb;
+	--timer-background-color: #eef6fa;
+	--time-color: #f67a4a;
+}
+
 .App {
-  text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--backround-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.timer {
+	position: relative;
+	padding: 50px 50px 30px 50px;
+	min-width: 400px;
+	width: 500px;
+	border-radius: 5px;
+	background-color: var(--timer-background-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timer .timer-wrapper {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	border-radius: 50%;
+	border-radius: 205px;
+	background: linear-gradient(145deg, #ffffff, #d6dde1);
+	box-shadow: 13px 13px 26px #cdd4d7, -13px -13px 26px #ffffff;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 25px;
+
+	color: var(--time-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.timer-wrapper #timer-label {
+	position: absolute;
+	top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.timer-wrapper #time-left {
+	font-size: 50px;
+	font-weight: 500;
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#reset {
+	position: absolute;
+	border-radius: 50%;
+	border: none;
+	width: 50px;
+	height: 50px;
+	right: 15px;
+	bottom: 0;
+
+	font-size: 15px;
+	color: #fff;
+	box-shadow: 0 0 10px #f67a4a;
+	background-color: var(--time-color);
+
+	outline: none;
+	cursor: pointer;
+}
+
+.session-controlls {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.session-controlls button {
+	background-color: var(--time-color);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	/* padding: 10px 10px; */
+	border: none;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+.session-controlls i {
+	color: var(--timer-background-color);
+	border: none;
+	pointer-events: none;
+}
+
+.session-controlls .session {
+	text-align: center;
+	font-size: 20px;
+	color: var(--time-color);
+}
+
+.session .length {
+	font-weight: 600;
+}
+
+.session-controlls .session-btn-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.timer-controll {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+#start_stop {
+	border: none;
+	cursor: pointer;
+	outline: none;
+	background: none;
+}
+
+#start_stop i {
+	color: var(--time-color);
+	margin-right: 5px;
+	pointer-events: none;
 }
